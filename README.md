@@ -1,54 +1,37 @@
 # AI Voice Extractor
 
-A multi-platform system for recording, extracting, and processing audio using transcription services.
+A multi-platform system for recording, streaming, and transcribing audio using Whisper.
 
 ## Project Structure
 
 ```
-├── backend/           # Python FastAPI backend
-│   ├── app/
-│   │   ├── main.py              # FastAPI application entry
-│   │   ├── config.py            # Configuration
-│   │   ├── database/            # Database setup
-│   │   ├── models/              # Data models
-│   │   ├── services/            # Business logic
-│   │   └── api/                 # API endpoints
-│   ├── requirements.txt
-│   └── README.md
-│
+├── backend/                    # Python FastAPI backend (port 8000)
 ├── clients/
-│   ├── web/          # React web frontend
-│   │   ├── src/
-│   │   ├── public/
-│   │   ├── package.json
-│   │   └── README.md
-│   │
-│   └── android/      # Android native client (to be implemented)
-│       └── README.md
-│
-└── README.md
+│   ├── web/                    # React web frontend (port 3000)
+│   └── android/                # Android client (planned)
+└── services/
+    ├── whisper-worker/         # Whisper transcription service (port 8001)
+    └── diarization-worker/     # Speaker diarization service (port 8002, optional)
 ```
 
 ## Quick Start
 
-### Option 1: Docker Compose (Recommended)
+### Docker Compose (Recommended)
 
-**Production Build:**
 ```bash
+# Production
 docker-compose up --build
-```
 
-**Development Build (with hot reload):**
-```bash
+# Development (hot reload)
 docker-compose -f docker-compose.dev.yml up --build
 ```
 
-Services will be available at:
+Services:
 - Backend: `http://localhost:8000`
 - Web Client: `http://localhost:3000`
 - API Docs: `http://localhost:8000/docs`
 
-### Option 2: Local Setup
+### Local Setup
 
 **Backend:**
 ```bash
@@ -59,8 +42,12 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Backend will run at `http://localhost:8000`
-API documentation: `http://localhost:8000/docs`
+**Whisper Worker:**
+```bash
+cd services/whisper-worker
+pip install -r requirements.txt
+python app.py  # runs on port 8001
+```
 
 **Web Client:**
 ```bash
@@ -69,46 +56,58 @@ npm install
 npm start
 ```
 
-Web client will open at `http://localhost:3000`
+## Current Status
 
-## Current Implementation
+### Done
+- ✅ Session management (create, list, close, online/offline modes)
+- ✅ Whisper transcription (via dedicated worker service)
+- ✅ Streaming audio — client sends PCM chunks every 5s, transcript updates via SSE
+- ✅ Batch audio — upload full recording, transcribe on session close
+- ✅ Offline recording with localStorage + sync when back online
+- ✅ Speaker diarization (optional, fails gracefully if worker unavailable)
+- ✅ GPU auto-detection: CUDA → Apple MPS → CPU
 
-### MVP Phase 1 - Basic Audio Recording & Streaming ✅
-- ✅ Session management (create, list, close)
-- ✅ Audio upload (batch mode)
-- ✅ Web client with session list and recording
-- ✅ Microphone selection
-- ✅ Online/Offline mode selection
-- ❌ Streaming audio chunks (chunked upload)
-- ❌ Transcription (Whisper)
-- ❌ Workflow execution
+### In Progress / Partial
+- ⚠️ Streaming transcription works but is best-effort (partial segments, not word-level)
+- ⚠️ Transcript persistence is JSON files (no database yet)
+
+### Planned
+- ❌ Workflow/extraction engine
+- ❌ Admin config UI
 - ❌ Android client
 
-### Next Steps
-1. Implement streaming audio chunk upload
-2. Add Whisper transcription integration
-3. Build workflow execution engine
-4. Create admin panel for configuration
-5. Develop Android client
-
-## API Overview
+## API
 
 ### Sessions
 ```
-POST   /api/v1/sessions              - Create new session
-GET    /api/v1/sessions              - List all sessions
-GET    /api/v1/sessions/{id}         - Get session details
-POST   /api/v1/sessions/{id}/close   - Close session
+POST   /api/v1/sessions/                      Create session
+GET    /api/v1/sessions/                      List sessions
+GET    /api/v1/sessions/{id}                  Get session
+POST   /api/v1/sessions/{id}/close            Close session
 ```
 
 ### Audio
 ```
-POST   /api/v1/sessions/{id}/audio   - Upload audio file
+POST   /api/v1/sessions/{id}/audio            Upload audio chunk or full file
+                                              ?is_final=true|false
+                                              ?mode=stream|batch
+```
+
+### Transcriptions
+```
+GET    /api/v1/sessions/{id}/transcript        Get stored transcript (JSON)
+GET    /api/v1/sessions/{id}/transcript/stream Live updates via SSE
+POST   /api/v1/sessions/{id}/transcribe        Trigger manual transcription
+```
+
+## Whisper Worker
+
+Runs as a standalone FastAPI service. Model is configurable via `WHISPER_MODEL` env var (default: `base`). Accepts `webm`, `mp4`, `m4a`, `wav` audio files.
+
+```bash
+WHISPER_MODEL=small python app.py
 ```
 
 ## Development
 
-Both backend and frontend use hot reload during development.
-
-For the backend, the server will automatically reload when you change Python files.
-For the web client, the browser will refresh when you change React files.
+Backend and frontend both support hot reload. See `WHISPER_SETUP.md` for GPU/model setup and `DOCKER.md` for container details.
