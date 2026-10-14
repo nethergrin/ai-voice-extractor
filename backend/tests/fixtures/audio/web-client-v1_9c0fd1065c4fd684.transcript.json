@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-10-05T20:58:47.751157",
+  "audio_file": "audio.webm",
+  "text": " Okay, third time testing new mic phones. We are trying to figure out these Moano microphones are actually working properly.",
+  "language": "en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.92,
+      "text": " Okay, third time testing new mic phones.",
+      "tokens": [
+        50364,
+        1033,
+        11,
+        2636,
+        565,
+        4997,
+        777,
+        3123,
+        10216,
+        13,
+        50610
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5430709575784618,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.049688778817653656
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.92,
+      "end": 10.36,
+      "text": " We are trying to figure out these Moano microphones are actually working properly.",
+      "tokens": [
+        50610,
+        492,
+        366,
+        1382,
+        281,
+        2573,
+        484,
+        613,
+        3335,
+        3730,
+        30495,
+        366,
+        767,
+        1364,
+        6108,
+        13,
+        50882
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5430709575784618,
+      "compression_ratio": 1.2424242424242424,
+      "no_speech_prob": 0.049688778817653656
+    }
+  ]
+}

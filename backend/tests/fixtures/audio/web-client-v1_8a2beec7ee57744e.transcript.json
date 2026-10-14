@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-10-05T20:54:48.643095",
+  "audio_file": "audio.webm",
+  "text": " Okay, so this is test recording to try and figure if whisper is working correctly.",
+  "language": "en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 10.0,
+      "text": " Okay, so this is test recording to try and figure if whisper is working correctly.",
+      "tokens": [
+        50364,
+        1033,
+        11,
+        370,
+        341,
+        307,
+        1500,
+        6613,
+        281,
+        853,
+        293,
+        2573,
+        498,
+        26018,
+        307,
+        1364,
+        8944,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.37721168994903564,
+      "compression_ratio": 1.0649350649350648,
+      "no_speech_prob": 0.02080172300338745
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-10-05T21:00:08.014066",
+  "audio_file": "audio.webm",
+  "text": " Bueno, cuarta prueba estamos haciendo una prueba con el de Crafano del Macbook Pro para identificar si el reconocimiento de idiomas funciona correctamente.",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 5.5600000000000005,
+      "text": " Bueno, cuarta prueba estamos haciendo una prueba con el",
+      "tokens": [
+        50364,
+        16046,
+        11,
+        2702,
+        19061,
+        48241,
+        10382,
+        20509,
+        2002,
+        48241,
+        416,
+        806,
+        50642
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6160822868347168,
+      "compression_ratio": 1.3247863247863247,
+      "no_speech_prob": 0.0547010600566864
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.5600000000000005,
+      "end": 10.86,
+      "text": " de Crafano del Macbook Pro para identificar si el reconocimiento de idiomas",
+      "tokens": [
+        50642,
+        368,
+        383,
+        10437,
+        3730,
+        1103,
+        5707,
+        2939,
+        1705,
+        1690,
+        2473,
+        25625,
+        1511,
+        806,
+        43838,
+        14007,
+        368,
+        18014,
+        7092,
+        50907
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6160822868347168,
+      "compression_ratio": 1.3247863247863247,
+      "no_speech_prob": 0.0547010600566864
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 10.86,
+      "end": 13.96,
+      "text": " funciona correctamente.",
+      "tokens": [
+        50907,
+        26210,
+        3006,
+        3439,
+        13,
+        51062
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6160822868347168,
+      "compression_ratio": 1.3247863247863247,
+      "no_speech_prob": 0.0547010600566864
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-06T12:57:37.415244",
+  "audio_file": "audio.webm",
+  "text": " Okay, I'm just in the regarding to see if it...",
+  "language": "en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Okay, I'm just in the regarding to see if it...",
+      "tokens": [
+        50364,
+        1033,
+        11,
+        286,
+        478,
+        445,
+        294,
+        264,
+        8595,
+        281,
+        536,
+        498,
+        309,
+        485,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6113268733024597,
+      "compression_ratio": 0.8545454545454545,
+      "no_speech_prob": 0.13115450739860535
+    }
+  ],
+  "status": "in_progress"
+}

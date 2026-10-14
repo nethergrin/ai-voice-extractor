@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-10-05T20:57:46.300910",
+  "audio_file": "audio.webm",
+  "text": " Okay, this is a new conversation. This one is created to identify if his microphone is working properly.",
+  "language": "en",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 4.0,
+      "text": " Okay, this is a new conversation.",
+      "tokens": [
+        50364,
+        1033,
+        11,
+        341,
+        307,
+        257,
+        777,
+        3761,
+        13,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4158081274766188,
+      "compression_ratio": 1.1685393258426966,
+      "no_speech_prob": 0.09014546871185303
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.0,
+      "end": 10.0,
+      "text": " This one is created to identify if his microphone is working properly.",
+      "tokens": [
+        50564,
+        639,
+        472,
+        307,
+        2942,
+        281,
+        5876,
+        498,
+        702,
+        10952,
+        307,
+        1364,
+        6108,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4158081274766188,
+      "compression_ratio": 1.1685393258426966,
+      "no_speech_prob": 0.09014546871185303
+    }
+  ]
+}

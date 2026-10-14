@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-06T02:34:37.752859",
+  "audio_file": "audio.webm",
+  "text": " vamos de nuevo, no parece ver nada",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 10.0,
+      "text": " vamos de nuevo, no parece ver nada",
+      "tokens": [
+        50364,
+        5295,
+        368,
+        18591,
+        11,
+        572,
+        14120,
+        1306,
+        8096,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9329883402044122,
+      "compression_ratio": 0.8095238095238095,
+      "no_speech_prob": 0.28755804896354675
+    }
+  ]
+}

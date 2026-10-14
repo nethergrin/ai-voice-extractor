@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-10-05T20:56:52.240411",
+  "audio_file": "audio.webm",
+  "text": " Oke, ini ini \uac15cuma new Trans\u5c0f\u6642 Lakaran bisa mengapot channel separately",
+  "language": "id",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.64,
+      "end": 3.12,
+      "text": " Oke, ini ini \uac15cuma new Trans\u5c0f\u6642",
+      "tokens": [
+        50396,
+        29094,
+        11,
+        7408,
+        7408,
+        14623,
+        66,
+        5544,
+        777,
+        6531,
+        46997,
+        50520
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.482942995817765,
+      "compression_ratio": 0.9625,
+      "no_speech_prob": 0.06574280560016632
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.12,
+      "end": 6.12,
+      "text": " Lakaran bisa mengapot channel separately",
+      "tokens": [
+        50520,
+        37327,
+        17142,
+        14386,
+        15330,
+        569,
+        310,
+        2269,
+        14759,
+        50670
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.482942995817765,
+      "compression_ratio": 0.9625,
+      "no_speech_prob": 0.06574280560016632
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-10-06T02:35:03.176999",
+  "audio_file": "audio.webm",
+  "text": " \u0648\u0644\u0627 \u0648\u0644\u0627 \u0648\u0644\u0627 \u0648\u0644\u0627",
+  "language": "ar",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " \u0648\u0644\u0627",
+      "tokens": [
+        50364,
+        4032,
+        15040,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8445642134722542,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.3627123236656189
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 2.0,
+      "end": 4.0,
+      "text": " \u0648\u0644\u0627",
+      "tokens": [
+        50464,
+        4032,
+        15040,
+        50564
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8445642134722542,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.3627123236656189
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 4.0,
+      "end": 6.0,
+      "text": " \u0648\u0644\u0627",
+      "tokens": [
+        50564,
+        4032,
+        15040,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8445642134722542,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.3627123236656189
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.0,
+      "end": 8.0,
+      "text": " \u0648\u0644\u0627",
+      "tokens": [
+        50664,
+        4032,
+        15040,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8445642134722542,
+      "compression_ratio": 1.5,
+      "no_speech_prob": 0.3627123236656189
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-10-06T02:15:57.034185",
+  "audio_file": "audio.webm",
+  "text": " a ver, la versi\u00f3n todo transcribe no estoy viendo nada me parece que no",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.56,
+      "text": " a ver, la versi\u00f3n todo transcribe",
+      "tokens": [
+        50364,
+        257,
+        1306,
+        11,
+        635,
+        47248,
+        5149,
+        1145,
+        8056,
+        50542
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9122565133231026,
+      "compression_ratio": 0.9863013698630136,
+      "no_speech_prob": 0.09966620802879333
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 8.76,
+      "end": 12.8,
+      "text": " no estoy viendo nada me parece que no",
+      "tokens": [
+        50802,
+        572,
+        15796,
+        34506,
+        8096,
+        385,
+        14120,
+        631,
+        572,
+        51004
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.9122565133231026,
+      "compression_ratio": 0.9863013698630136,
+      "no_speech_prob": 0.09966620802879333
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////data/app.db
+      - AUDIO_STORAGE_PATH=/data/audio_storage
+      - DEBUG=False
+      - WHISPER_API_URL=http://host.docker.internal:8001
+      - DIARIZATION_API_URL=http://host.docker.internal:8002
+      - TRANSCRIPT_MODE=stream
+      - WHISPER_MODEL=base
+    volumes:
+      - backend_data:/data
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  whisper-worker:
+    build:
+      context: ./services/whisper-worker
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-whisper
+    ports:
+      - "8001:8001"
+    environment:
+      - WHISPER_MODEL=base
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  web:
+    build:
+      context: ./clients/web
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-web
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api/v1
+      - REACT_APP_STREAM_CHUNK_INTERVAL=5000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  backend_data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

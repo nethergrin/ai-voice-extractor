@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-10-06T02:40:16.158155",
+  "audio_file": "audio.webm",
+  "text": " a terminar de las voces a terminar de las voces",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": " a terminar de las voces",
+      "tokens": [
+        50364,
+        257,
+        36246,
+        368,
+        2439,
+        1650,
+        887,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.864010305965648,
+      "compression_ratio": 1.3428571428571427,
+      "no_speech_prob": 0.04332072660326958
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.4,
+      "end": 6.4,
+      "text": " a terminar de las voces",
+      "tokens": [
+        50584,
+        257,
+        36246,
+        368,
+        2439,
+        1650,
+        887,
+        50684
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.864010305965648,
+      "compression_ratio": 1.3428571428571427,
+      "no_speech_prob": 0.04332072660326958
+    }
+  ]
+}

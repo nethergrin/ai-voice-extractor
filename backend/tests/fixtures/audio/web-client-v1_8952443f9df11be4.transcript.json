@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-06T02:34:08.107362",
+  "audio_file": "audio.webm",
+  "text": " primero bueno la v\u1eady inter religio no parece otra company",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.48,
+      "end": 2.48,
+      "text": " primero",
+      "tokens": [
+        50388,
+        21289,
+        50488
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.476992289225261,
+      "compression_ratio": 0.9076923076923077,
+      "no_speech_prob": 0.29260018467903137
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.5200000000000005,
+      "end": 6.0200000000000005,
+      "text": " bueno la v\u1eady inter religio",
+      "tokens": [
+        50590,
+        11974,
+        635,
+        29738,
+        728,
+        4039,
+        1004,
+        50665
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.476992289225261,
+      "compression_ratio": 0.9076923076923077,
+      "no_speech_prob": 0.29260018467903137
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 6.32,
+      "end": 9.02,
+      "text": " no parece otra company",
+      "tokens": [
+        50680,
+        572,
+        14120,
+        13623,
+        2237,
+        50815
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -4.476992289225261,
+      "compression_ratio": 0.9076923076923077,
+      "no_speech_prob": 0.29260018467903137
+    }
+  ]
+}

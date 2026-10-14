@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-06T01:53:51.562595",
+  "audio_file": "audio.webm",
+  "text": " vamos a ver, ahora si era as\u00ed funciona esto, parecer\u00eda que no, puta madre",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 11.08,
+      "text": " vamos a ver, ahora si era as\u00ed funciona esto, parecer\u00eda que no, puta madre",
+      "tokens": [
+        50364,
+        5295,
+        257,
+        1306,
+        11,
+        9923,
+        1511,
+        4249,
+        8582,
+        26210,
+        7433,
+        11,
+        44885,
+        2686,
+        631,
+        572,
+        11,
+        46681,
+        32966,
+        50918
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6518267676943824,
+      "compression_ratio": 1.0416666666666667,
+      "no_speech_prob": 0.05375365912914276
+    }
+  ]
+}

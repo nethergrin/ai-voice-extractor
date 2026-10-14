@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-10-06T02:35:44.817190",
+  "audio_file": "audio.webm",
+  "text": " bueno ahora no para, ser\u00eda que no no tengo que llamar nada",
+  "language": "es",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.0,
+      "text": " bueno ahora",
+      "tokens": [
+        50364,
+        11974,
+        9923,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.978440420968192,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.0512038879096508
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 7.0,
+      "end": 11.0,
+      "text": " no para, ser\u00eda que no",
+      "tokens": [
+        50714,
+        572,
+        1690,
+        11,
+        23679,
+        631,
+        572,
+        50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.978440420968192,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.0512038879096508
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 15.0,
+      "end": 18.0,
+      "text": " no tengo que llamar nada",
+      "tokens": [
+        51114,
+        572,
+        13989,
+        631,
+        16848,
+        289,
+        8096,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.978440420968192,
+      "compression_ratio": 1.0,
+      "no_speech_prob": 0.0512038879096508
+    }
+  ]
+}

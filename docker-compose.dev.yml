@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-backend-dev
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////data/app.db
+      - AUDIO_STORAGE_PATH=/data/audio_storage
+      - DEBUG=True
+      - WHISPER_API_URL=http://host.docker.internal:8001
+      - DIARIZATION_API_URL=http://host.docker.internal:8002
+      - TRANSCRIPT_MODE=stream
+      - WHISPER_MODEL=base
+    volumes:
+      - ./data:/data
+      - ./backend/app:/app/app
+    networks:
+      - app-network
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  whisper-worker:
+    build:
+      context: ./services/whisper-worker
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-whisper-dev
+    ports:
+      - "8001:8001"
+    environment:
+      - WHISPER_MODEL=base
+    networks:
+      - app-network
+    restart: unless-stopped
+    command: uvicorn app:app --host 0.0.0.0 --port 8001 --reload
+
+  web:
+    build:
+      context: ./clients/web
+      dockerfile: Dockerfile
+    container_name: ai-voice-extractor-web-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api/v1
+      - REACT_APP_STREAM_CHUNK_INTERVAL=5000
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
